@@ -58,9 +58,23 @@ for(i=2;i<=n;i++){
 void bubble(int p[],int n){
 	int i,j;
 	int x;
+    for(i=1;i<n;i++){
+     for(j=n-1;j>=i;j--){
+        if(p[j-1] > p[j]){
+		x=p[j-1];
+		p[j-1]=p[j];
+		p[j]=x;
+
+
+	   }
+
+	}
 
 
 
+
+    }
+for(int c=0;c<n;c++){ printf("%d ",p[c]); } 
 }
 
 
@@ -75,7 +89,9 @@ printf("\n");
 printf("INSERT-SORT\n");
 InsSort(p,n);
 printf("\n");
-
+printf("BUBBLE-SORT\n");
+bubble(p,n);
+printf("\n");
 
 
 }
