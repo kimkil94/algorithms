@@ -116,6 +116,32 @@ printf("%d ",p[k]);}
 
 }
 
+void quicksort(int p[],int l, int r){
+int i,j,x,y,l_size;
+i=l;j=r;l_size=r;
+x=p[(l+r)/2];
+printf("\n");
+for(int c=0;c<9;c++){
+printf("%d ",p[c]);
+}
+
+do{
+	while(p[i]<x && i<r)i++;
+	while(p[j]>x && j>l)j--;
+	if(i<=j){
+	 if(i<j){
+	   y=p[i];p[i]=p[j];p[j]=y;}
+	 i++;j--;
+	 }
+   
+
+	}
+ while(i<=j);
+ if(l<j) quicksort(p,l,j);
+ if(i<r) quicksort(p,i,r);
+
+}
+
 int main(){
 
 int n=10;
@@ -130,6 +156,6 @@ int f[9];
 //printf("BUBBLE-SORT\n");
 //bubble(p,n);
 printf("\n");
-merge(p,f,1,9);
-
+//merge(p,f,1,9);
+quicksort(p,1,9);
 }
